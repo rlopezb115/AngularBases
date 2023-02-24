@@ -1,0 +1,21 @@
+<h1>Superheroes</h1>
+<div *ngIf="newHeroes.length > 0; else noActivos">
+    <h3>Superheroes Activos:</h3>
+    <ul *ngFor="let newHeroe of newHeroes; let i = index">
+        <ol>{{ i + 1 }} - {{ newHeroe }} </ol>
+    </ul>
+</div>
+
+<ng-template #noActivos>
+    <h3>No hay Super heroes activos...</h3>
+</ng-template>
+
+
+<button (click)="eliminarSuperheroe()" >Eliminar Superheroe</button>
+<br />
+<div *ngIf="deletedHeroes.length > 0">
+    <h3>Heroes Eliminados.</h3>
+    <ul *ngFor="let deletedHeroe of deletedHeroes; let i = index">
+        <ol>{{ i + 1 }} - {{ deletedHeroe }} </ol>
+    </ul>
+</div>
